@@ -3,7 +3,7 @@ on:
    push :
      branches : 
        - main 
-          pull_request :
+          Pull_request :
           type : [synchronized]
         jobs:
     build:
