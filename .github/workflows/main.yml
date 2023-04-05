@@ -19,4 +19,8 @@ on:
          port: ${{ secrets.PORT }}
          script: |
             whoami
-            ls -al
+            ls -alscript: |
+          mkdir buatanAction
+          cd buatanAction
+          touch filesaya.txt
+            
