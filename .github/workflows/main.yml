@@ -1,26 +1,26 @@
 name: otomasi deploy server 
 on:
-   push :
-     branches : 
-       - main 
-          Pull_request :
-          type : [synchronized]
-        jobs:
-    build:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [synchronize]
+
+jobs:
+  build:
     name: Build
     runs-on: ubuntu-latest
     steps:
-    - name: multiple command
-      uses: appleboy/ssh-action@v0.1.9
-      with:
-         host: ${{ secrets.HOST }}
-         username: ${{ secrets.USERNAME }}
-         key: ${{ secrets.KEY }}
-         port: ${{ secrets.PORT }}
-         script: |
+      - name: multiple command
+        uses: appleboy/ssh-action@v0.1.9
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
+          port: ${{ secrets.PORT }}
+          script: |
             whoami
-            ls -alscript: |
-          mkdir buatanAction
-          cd buatanAction
-          touch filesaya.txt
-            
+            ls -als
+            mkdir buatanAction
+            cd buatanAction
+            touch filesaya.txt
