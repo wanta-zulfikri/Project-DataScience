@@ -19,8 +19,9 @@ jobs:
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
           script: |
-            whoami
-            ls -als
-            mkdir buatanAction
-            cd buatanAction
-            touch filesaya.txt
+           cd Altera
+           rm -rf deployBE16
+           git clone https://github.com/jackpanda96/deployBE16.git
+           cd deployBE16
+           go run main.go
+           
